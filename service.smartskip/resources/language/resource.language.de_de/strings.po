@@ -1,0 +1,121 @@
+# Kodi Media Center language file
+# Addon Name: SmartSkip
+# Addon id: plugin.video.smartskip
+# Language: Deutsch
+# Last-Translator: Mildman1848
+# Last-Edit-Date: 2025-06-13
+
+msgid ""
+msgstr ""
+"Project-Id-Version: SmartSkip\n"
+"Language: de_DE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Deutsch\n"
+"Last-Translator: SmartSkip Team\n"
+"PO-Revision-Date: 2025-06-13\n"
+"MIME-Version: 1.0\n"
+
+msgctxt "#30000"
+msgid "SmartSkip"
+msgstr "SmartSkip"
+
+msgctxt "#30001"
+msgid "Enable intro skip"
+msgstr "Intro überspringen aktivieren"
+
+msgctxt "#30002"
+msgid "Enable recap skip"
+msgstr "Rückblick überspringen aktivieren"
+
+msgctxt "#30003"
+msgid "Enable outro skip"
+msgstr "Outro überspringen aktivieren"
+
+msgctxt "#30004"
+msgid "Enable preview skip"
+msgstr "Vorschau überspringen aktivieren"
+
+msgctxt "#30005"
+msgid "Enable credits skip"
+msgstr "Abspann überspringen aktivieren"
+
+msgctxt "#30006"
+msgid "Skip mode"
+msgstr "Überspringmodus"
+
+msgctxt "#30007"
+msgid "EDL mode"
+msgstr "EDL-Modus"
+
+msgctxt "#30008"
+msgid "Basic Detection"
+msgstr "Einfache Erkennung"
+
+msgctxt "#30009"
+msgid "Full intro-skipper"
+msgstr "Vollständiger intro-skipper"
+
+msgctxt "#30011"
+msgid "Intro"
+msgstr "Intro"
+
+msgctxt "#30012"
+msgid "Recap"
+msgstr "Zusammenfassung"
+
+msgctxt "#30013"
+msgid "Outro"
+msgstr "Abspann"
+
+msgctxt "#30014"
+msgid "Preview"
+msgstr "Vorschau"
+
+msgctxt "#30015"
+msgid "Credits"
+msgstr "Credits"
+
+msgctxt "#30016"
+msgid "Segment"
+msgstr "Segment"
+
+msgctxt "#30017"
+msgid "skip"
+msgstr "überspringen"
+
+msgctxt "#30020"
+msgid "Automatically skipped: %s (%.1f → %.1f)"
+msgstr "Automatisch übersprungen: %s (%.1f → %.1f)"
+
+msgctxt "#30021"
+msgid "User prompt: %s (%.1f–%.1f)"
+msgstr "Benutzerabfrage: %s (%.1f–%.1f)"
+
+msgctxt "#30022"
+msgid "Skip %s?"
+msgstr "%s überspringen?"
+
+msgctxt "#30023"
+msgid "User skipped %s: %.1f → %.1f"
+msgstr "Benutzer hat %s übersprungen: %.1f → %.1f"
+
+msgctxt "#30030"
+msgid "Service started"
+msgstr "Service gestartet"
+
+msgctxt "#30031"
+msgid "Service stopped"
+msgstr "Service beendet"
+
+msgctxt "#30032"
+msgid "Active settings: %s"
+msgstr "Aktive Einstellungen: %s"
+
+msgctxt "#30033"
+msgid "Warning: Invalid skip mode '%s', using 'Manual'"
+msgstr "Warnung: Ungültiger Skip-Modus '%s', verwende 'Manuell'"
+
+msgctxt "#33001"
+msgid "Skip segment"
+msgstr "Intro überspringen"

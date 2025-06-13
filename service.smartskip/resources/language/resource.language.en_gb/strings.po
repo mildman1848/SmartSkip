@@ -1,0 +1,117 @@
+# Kodi Media Center language file
+# Addon Name: SmartSkip
+# Addon id: plugin.video.smartskip
+# Language: English (UK)
+# Last-Translator: Mildman1848
+# Last-Edit-Date: 2025-06-13
+
+msgid ""
+msgstr ""
+"Project-Id-Version: SmartSkip\n"
+"Language: en-gb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgctxt "#30000"
+msgid "SmartSkip"
+msgstr "SmartSkip"
+
+msgctxt "#30001"
+msgid "Enable intro skip"
+msgstr "Enable intro skip"
+
+msgctxt "#30002"
+msgid "Enable recap skip"
+msgstr "Enable recap skip"
+
+msgctxt "#30003"
+msgid "Enable outro skip"
+msgstr "Enable outro skip"
+
+msgctxt "#30004"
+msgid "Enable preview skip"
+msgstr "Enable preview skip"
+
+msgctxt "#30005"
+msgid "Enable credits skip"
+msgstr "Enable credits skip"
+
+msgctxt "#30006"
+msgid "Skip mode"
+msgstr "Skip mode"
+
+msgctxt "#30007"
+msgid "EDL mode"
+msgstr "EDL mode"
+
+msgctxt "#30008"
+msgid "Basic Detection"
+msgstr "Basic Detection"
+
+msgctxt "#30009"
+msgid "Full intro-skipper"
+msgstr "Full intro-skipper"
+
+# Segment labels
+msgctxt "#30011"
+msgid "Intro"
+msgstr "Intro"
+
+msgctxt "#30012"
+msgid "Recap"
+msgstr "Recap"
+
+msgctxt "#30013"
+msgid "Outro"
+msgstr "Outro"
+
+msgctxt "#30014"
+msgid "Preview"
+msgstr "Preview"
+
+msgctxt "#30015"
+msgid "Credits"
+msgstr "Credits"
+
+msgctxt "#30016"
+msgid "Segment"
+msgstr "Segment"
+
+msgctxt "#30017"
+msgid "skip"
+msgstr "skip"
+
+
+# Logging and prompts
+msgctxt "#30020"
+msgid "Automatically skipped: %s (%.1f → %.1f)"
+msgstr "Automatically skipped: %s (%.1f → %.1f)"
+
+msgctxt "#30021"
+msgid "User prompt: %s (%.1f–%.1f)"
+msgstr "User prompt: %s (%.1f–%.1f)"
+
+msgctxt "#30022"
+msgid "Skip %s?"
+msgstr "Skip %s?"
+
+msgctxt "#30023"
+msgid "User skipped %s: %.1f → %.1f"
+msgstr "User skipped %s: %.1f → %.1f"
+
+msgctxt "#30030"
+msgid "Service started"
+msgstr "Service started"
+
+msgctxt "#30031"
+msgid "Service stopped"
+msgstr "Service stopped"
+
+msgctxt "#30032"
+msgid "Active settings: %s"
+msgstr "Active settings: %s"
+
+msgctxt "#30033"
+msgid "Warning: Invalid skip mode '%s', using 'Manual'"
+msgstr "Warning: Invalid skip mode '%s', using 'Manual'"

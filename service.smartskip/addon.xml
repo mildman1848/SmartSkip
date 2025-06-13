@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="service.smartskip"
+       name="SmartSkip"
+       version="1.0.0"
+       provider-name="Mildman1848">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.service" library="service.py" start="startup"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Automatically skip intros, recaps, outros and more</summary>
+        <description lang="en">SmartSkip uses heuristics and EDL files to skip or mark parts of video content like intros, recaps, previews, and credits.</description>
+        <platform>all</platform>
+        <license>GPL-3.0</license>
+    </extension>
+    <extension point="xbmc.gui.skin">
+        <defaultresolution>1080i</defaultresolution>
+        <defaultthemename>Default</defaultthemename>
+    </extension>
+</addon>

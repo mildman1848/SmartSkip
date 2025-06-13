@@ -1,0 +1,12 @@
+<settings>
+    <category label="30000"> <!-- Allgemeine Einstellungen -->
+        <setting id="enable_intro_skip" type="bool" default="true" label="30001" />
+        <setting id="enable_recap_skip" type="bool" default="true" label="30002" />
+        <setting id="enable_outro_skip" type="bool" default="true" label="30003" />
+        <setting id="enable_preview_skip" type="bool" default="true" label="30004" />
+        <setting id="enable_credits_skip" type="bool" default="true" label="30005" />
+
+        <setting id="skip_mode" type="enum" values="Automatic|Manual" default="0" label="30006" />
+        <setting id="edl_mode" type="enum" values="Basic Detection|Full intro-skipper" default="1" label="30007" />
+    </category>
+</settings>

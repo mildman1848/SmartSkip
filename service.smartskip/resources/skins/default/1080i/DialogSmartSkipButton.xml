@@ -1,0 +1,63 @@
+<window type="dialog">
+    <defaultcontrol>100</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+
+    <controls>
+        <control type="group">
+            <left>78%</left>
+            <top>88%</top>
+            <width>20%</width>
+            <height>10%</height>
+            <visible>true</visible>
+
+            <!-- Button-Hintergrund -->
+            <control type="image" id="1000">
+                <description>Button-Hintergrund</description>
+                <left>0</left>
+                <top>0</top>
+                <width>100%</width>
+                <height>100%</height>
+                <texture border="12">button-focus.png</texture>
+                <colordiffuse>FF222222</colordiffuse>
+            </control>
+
+            <!-- Fortschrittsbalken (läuft nach links aus) -->
+            <control type="image" id="1002">
+                <description>Fortschrittsbalken</description>
+                <left>0</left>
+                <top>0</top>
+                <width>0</width> <!-- Start mit 0 -->
+                <height>100%</height>
+                <texture colordiffuse="80AAAAAA">white.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <animation effect="width" end="100%" time="3000" reversible="false" condition="true">Conditional</animation>
+            </control>
+
+            <!-- Segment-Label -->
+            <control type="label" id="101">
+                <left>0</left>
+                <top>20%</top>
+                <width>100%</width>
+                <height>60%</height>
+                <label>$LOCALIZE[33001]</label> <!-- Z. B. „Intro überspringen“ -->
+                <align>center</align>
+                <font>font13</font>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+
+            <!-- Unsichtbarer Klickbereich -->
+            <control type="button" id="100">
+                <left>0</left>
+                <top>0</top>
+                <width>100%</width>
+                <height>100%</height>
+                <label></label>
+                <texturenofocus>-</texturenofocus>
+                <texturefocus>-</texturefocus>
+                <visible>true</visible>
+            </control>
+        </control>
+    </controls>
+</window>
