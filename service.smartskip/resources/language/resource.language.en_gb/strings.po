@@ -1,9 +1,9 @@
 # Kodi Media Center language file
 # Addon Name: SmartSkip
-# Addon id: plugin.video.smartskip
+# Addon id: service.smartskip
 # Language: English (UK)
 # Last-Translator: Mildman1848
-# Last-Edit-Date: 2025-06-13
+# Last-Edit-Date: 2025-06-14
 
 msgid ""
 msgstr ""
@@ -19,23 +19,23 @@ msgstr "SmartSkip"
 
 msgctxt "#30001"
 msgid "Enable intro skip"
-msgstr "Enable intro skip"
+msgstr "Enable skipping of intros"
 
 msgctxt "#30002"
 msgid "Enable recap skip"
-msgstr "Enable recap skip"
+msgstr "Enable skipping of recaps"
 
 msgctxt "#30003"
 msgid "Enable outro skip"
-msgstr "Enable outro skip"
+msgstr "Enable skipping of outros"
 
 msgctxt "#30004"
 msgid "Enable preview skip"
-msgstr "Enable preview skip"
+msgstr "Enable skipping of previews"
 
 msgctxt "#30005"
 msgid "Enable credits skip"
-msgstr "Enable credits skip"
+msgstr "Enable skipping of credits"
 
 msgctxt "#30006"
 msgid "Skip mode"
@@ -47,13 +47,12 @@ msgstr "EDL mode"
 
 msgctxt "#30008"
 msgid "Basic Detection"
-msgstr "Basic Detection"
+msgstr "Basic detection"
 
 msgctxt "#30009"
 msgid "Full intro-skipper"
-msgstr "Full intro-skipper"
+msgstr "Full intro-skipper engine"
 
-# Segment labels
 msgctxt "#30011"
 msgid "Intro"
 msgstr "Intro"
@@ -82,15 +81,13 @@ msgctxt "#30017"
 msgid "skip"
 msgstr "skip"
 
-
-# Logging and prompts
 msgctxt "#30020"
 msgid "Automatically skipped: %s (%.1f → %.1f)"
 msgstr "Automatically skipped: %s (%.1f → %.1f)"
 
 msgctxt "#30021"
 msgid "User prompt: %s (%.1f–%.1f)"
-msgstr "User prompt: %s (%.1f–%.1f)"
+msgstr "Prompting user to skip: %s (%.1f–%.1f)"
 
 msgctxt "#30022"
 msgid "Skip %s?"
@@ -98,15 +95,15 @@ msgstr "Skip %s?"
 
 msgctxt "#30023"
 msgid "User skipped %s: %.1f → %.1f"
-msgstr "User skipped %s: %.1f → %.1f"
+msgstr "User chose to skip %s: %.1f → %.1f"
 
 msgctxt "#30030"
 msgid "Service started"
-msgstr "Service started"
+msgstr "SmartSkip service started"
 
 msgctxt "#30031"
 msgid "Service stopped"
-msgstr "Service stopped"
+msgstr "SmartSkip service stopped"
 
 msgctxt "#30032"
 msgid "Active settings: %s"
@@ -114,4 +111,145 @@ msgstr "Active settings: %s"
 
 msgctxt "#30033"
 msgid "Warning: Invalid skip mode '%s', using 'Manual'"
-msgstr "Warning: Invalid skip mode '%s', using 'Manual'"
+msgstr "Warning: Invalid skip mode '%s'. Falling back to 'Manual'"
+
+msgctxt "#33001"
+msgid "Skip segment"
+msgstr "Skip segment"
+
+# Entries for service.py localization and debug logging
+msgctxt "#32000"
+msgid "Service started"
+msgstr "Service started"
+
+msgctxt "#32001"
+msgid "SmartSkipPlayer initialized"
+msgstr "SmartSkipPlayer initialized"
+
+msgctxt "#32002"
+msgid "Monitor started, waiting for abort..."
+msgstr "Monitor started, waiting for abort..."
+
+msgctxt "#32003"
+msgid "Service stopped"
+msgstr "Service stopped"
+
+msgctxt "#32004"
+msgid "Settings loaded"
+msgstr "Settings loaded"
+
+msgctxt "#32005"
+msgid "Error in service"
+msgstr "Error occurred in SmartSkip service"
+
+msgctxt "#32006"
+msgid "Settings changed – refreshing"
+msgstr "Settings changed – refreshing"
+
+msgctxt "#32007"
+msgid "Playback started"
+msgstr "Playback started"
+
+msgctxt "#32008"
+msgid "Playing file: %s"
+msgstr "Playing file: %s"
+
+msgctxt "#32009"
+msgid "Found %d EDL segments"
+msgstr "Found %d EDL segments"
+
+msgctxt "#32010"
+msgid "Enable debug logging"
+msgstr "Enable debug logging"
+
+msgctxt "#32011"
+msgid "Error showing skip dialog: %s"
+msgstr "Error showing skip dialog: %s"
+
+msgctxt "#32012"
+msgid "Error in skip loop: %s"
+msgstr "Error in skip loop: %s"
+
+msgctxt "#32013"
+msgid "Playback ended"
+msgstr "Playback ended"
+
+msgctxt "#32014"
+msgid "Playback stopped"
+msgstr "Playback stopped"
+
+msgctxt "#32015"
+msgid "Playback error"
+msgstr "Playback error"
+
+msgctxt "#32020"
+msgid "Error retrieving video duration: %s"
+msgstr "Error retrieving video duration: %s"
+
+msgctxt "#32021"
+msgid "SmartSkipButton initialized – showing button"
+msgstr "SmartSkipButton initialized – showing button"
+
+msgctxt "#32022"
+msgid "Click detected on control ID:"
+msgstr "Click detected on control ID:"
+
+msgctxt "#32023"
+msgid "User pressed back"
+msgstr "User pressed back"
+
+msgctxt "#32024"
+msgid "Starting progress display – width:"
+msgstr "Starting progress display – width:"
+
+msgctxt "#32025"
+msgid "Error accessing progress bar: %s"
+msgstr "Error accessing progress bar: %s"
+
+msgctxt "#32027"
+msgid "Error setting progress bar width: %s"
+msgstr "Error setting progress bar width: %s"
+
+msgctxt "#32028"
+msgid "Timeout reached – closing dialog"
+msgstr "Timeout reached – closing dialog"
+
+msgctxt "#32029"
+msgid "Progress"
+msgstr "Progress"
+
+msgctxt "#32030"
+msgid "Width"
+msgstr "Width"
+
+msgctxt "#32031"
+msgid "Video duration"
+msgstr "Video duration"
+
+msgctxt "#32032"
+msgid "seconds"
+msgstr "seconds"
+
+msgctxt "#33010"
+msgid "No EDL file found: %s"
+msgstr "No EDL file found: %s"
+
+msgctxt "#33011"
+msgid "Parsed segment [%s]: %.1f → %.1f"
+msgstr "Parsed segment [%s]: %.1f → %.1f"
+
+msgctxt "#33012"
+msgid "Invalid EDL line ignored: %s"
+msgstr "Invalid EDL line ignored: %s"
+
+msgctxt "#33013"
+msgid "Error reading EDL file: %s"
+msgstr "Error reading EDL file: %s"
+
+msgctxt "#33014"
+msgid "Skip Mode: Automatic"
+msgstr "Skip Mode: Automatic"
+
+msgctxt "#33015"
+msgid "Skip Mode: Manual"
+msgstr "Skip Mode: Manual"

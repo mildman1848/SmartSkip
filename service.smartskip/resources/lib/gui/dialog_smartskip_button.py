@@ -3,6 +3,17 @@ import xbmcgui
 import xbmc
 import time
 import threading
+import xbmcaddon
+
+# Lokalisierung vorbereiten
+ADDON = xbmcaddon.Addon()
+_ = lambda x: ADDON.getLocalizedString(x)
+
+def is_debug_enabled():
+    try:
+        return ADDON.getSettingBool("enable_debug_logging")
+    except Exception:
+        return False
 
 class SmartSkipButton(xbmcgui.WindowXMLDialog):
     def __init__(self, *args, **kwargs):
@@ -21,19 +32,20 @@ class SmartSkipButton(xbmcgui.WindowXMLDialog):
         self.timeout = timeout
 
     def onInit(self):
-        xbmc.log("[SmartSkipButton] Init – Starte Button-Anzeige", xbmc.LOGINFO)
+        xbmc.log("[SmartSkip] %s" % _(32021), xbmc.LOGINFO)
         self._start_time = time.time()
         try:
-            label_control = self.getControl(101)  # Label
-            label_control.setLabel(f"{self.label} " + xbmc.getLocalizedString(30017))  # z. B. "Intro überspringen"
+            label_control = self.getControl(101)
+            label_control.setLabel(f"{self.label} " + xbmc.getLocalizedString(30017))
         except Exception as e:
-            xbmc.log(f"[SmartSkipButton] Fehler beim Setzen des Labels: {e}", xbmc.LOGERROR)
+            xbmc.log("[SmartSkip] %s" % (_(32011) % str(e)), xbmc.LOGERROR)
 
         self._fade_thread = threading.Thread(target=self._update_progress)
         self._fade_thread.start()
 
     def onClick(self, controlId):
-        xbmc.log(f"[SmartSkipButton] Klick erkannt auf Control-ID: {controlId}", xbmc.LOGDEBUG)
+        if is_debug_enabled():
+            xbmc.log("[SmartSkip] %s %d" % (_(32022), controlId), xbmc.LOGDEBUG)
         if controlId == 100:
             self.should_skip = True
             self._stop = True
@@ -41,7 +53,8 @@ class SmartSkipButton(xbmcgui.WindowXMLDialog):
 
     def onAction(self, action):
         if action.getId() in (xbmcgui.ACTION_PREVIOUS_MENU, xbmcgui.ACTION_NAV_BACK):
-            xbmc.log("[SmartSkipButton] Benutzer hat zurück gedrückt", xbmc.LOGDEBUG)
+            if is_debug_enabled():
+                xbmc.log("[SmartSkip] %s" % _(32023), xbmc.LOGDEBUG)
             self._stop = True
             self.close()
 
@@ -49,11 +62,12 @@ class SmartSkipButton(xbmcgui.WindowXMLDialog):
         fade_duration = self.timeout
 
         try:
-            fade_bar = self.getControl(1002)  # Fortschrittsbalken
+            fade_bar = self.getControl(1002)
             total_width = fade_bar.getWidth()
-            xbmc.log(f"[SmartSkipButton] Starte Fortschrittsanzeige – Breite: {total_width}", xbmc.LOGDEBUG)
+            if is_debug_enabled():
+                xbmc.log("[SmartSkip] %s %d" % (_(32024), total_width), xbmc.LOGDEBUG)
         except Exception as e:
-            xbmc.log(f"[SmartSkipButton] Fehler beim Zugriff auf Fortschrittsbalken: {e}", xbmc.LOGERROR)
+            xbmc.log("[SmartSkip] %s" % (_(32025) % str(e)), xbmc.LOGERROR)
             return
 
         while not self._stop:
@@ -66,12 +80,14 @@ class SmartSkipButton(xbmcgui.WindowXMLDialog):
 
             try:
                 fade_bar.setWidth(current_width)
-                xbmc.log(f"[SmartSkipButton] Fortschritt: {progress:.2f}, Breite: {current_width}", xbmc.LOGDEBUG)
+                if is_debug_enabled():
+                    xbmc.log("[SmartSkip] %s: %.2f, %s: %d" % (_(32029), progress, _(32030), current_width), xbmc.LOGDEBUG)
             except Exception as e:
-                xbmc.log(f"[SmartSkipButton] Fehler beim Setzen der Breite: {e}", xbmc.LOGERROR)
+                xbmc.log("[SmartSkip] %s" % (_(32027) % str(e)), xbmc.LOGERROR)
 
             xbmc.sleep(100)
 
         if not self.should_skip:
-            xbmc.log("[SmartSkipButton] Timeout erreicht – schließe Dialog", xbmc.LOGDEBUG)
+            if is_debug_enabled():
+                xbmc.log("[SmartSkip] %s" % _(32028), xbmc.LOGDEBUG)
             self.close()

@@ -1,20 +1,17 @@
 # Kodi Media Center language file
 # Addon Name: SmartSkip
-# Addon id: plugin.video.smartskip
+# Addon id: service.smartskip
 # Language: Deutsch
 # Last-Translator: Mildman1848
-# Last-Edit-Date: 2025-06-13
+# Last-Edit-Date: 2025-06-14
 
 msgid ""
 msgstr ""
 "Project-Id-Version: SmartSkip\n"
-"Language: de_DE\n"
+"Language: de-de\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language-Team: Deutsch\n"
-"Last-Translator: SmartSkip Team\n"
-"PO-Revision-Date: 2025-06-13\n"
-"MIME-Version: 1.0\n"
 
 msgctxt "#30000"
 msgid "SmartSkip"
@@ -55,6 +52,10 @@ msgstr "Einfache Erkennung"
 msgctxt "#30009"
 msgid "Full intro-skipper"
 msgstr "Vollständiger intro-skipper"
+
+# ===============
+# Standardmeldungen
+# ===============
 
 msgctxt "#30011"
 msgid "Intro"
@@ -116,6 +117,147 @@ msgctxt "#30033"
 msgid "Warning: Invalid skip mode '%s', using 'Manual'"
 msgstr "Warnung: Ungültiger Skip-Modus '%s', verwende 'Manuell'"
 
+# ===============
+# System-/Debugmeldungen
+# ===============
+
+msgctxt "#32000"
+msgid "Service started"
+msgstr "Service gestartet"
+
+msgctxt "#32001"
+msgid "SmartSkipPlayer initialized"
+msgstr "SmartSkipPlayer initialisiert"
+
+msgctxt "#32002"
+msgid "Monitor started, waiting for abort..."
+msgstr "Monitor gestartet, warte auf Beenden..."
+
+msgctxt "#32003"
+msgid "Service stopped"
+msgstr "Service beendet"
+
+msgctxt "#32004"
+msgid "Settings loaded"
+msgstr "Einstellungen geladen"
+
+msgctxt "#32005"
+msgid "Error in service"
+msgstr "Fehler im Service"
+
+msgctxt "#32006"
+msgid "Settings changed – refreshing"
+msgstr "Einstellungen geändert – aktualisiere"
+
+msgctxt "#32007"
+msgid "Playback started"
+msgstr "Wiedergabe gestartet"
+
+msgctxt "#32008"
+msgid "Playing file: %s"
+msgstr "Spiele Datei: %s"
+
+msgctxt "#32009"
+msgid "Found %d EDL segments"
+msgstr "%d EDL-Segmente gefunden"
+
+msgctxt "#32010"
+msgid "Enable debug logging"
+msgstr "Debug-Logging aktivieren"
+
+msgctxt "#32011"
+msgid "Error showing skip dialog: %s"
+msgstr "Fehler beim Anzeigen des Skip-Dialogs: %s"
+
+msgctxt "#32012"
+msgid "Error in skip loop: %s"
+msgstr "Fehler in der Skip-Schleife: %s"
+
+msgctxt "#32013"
+msgid "Playback ended"
+msgstr "Wiedergabe beendet"
+
+msgctxt "#32014"
+msgid "Playback stopped"
+msgstr "Wiedergabe gestoppt"
+
+msgctxt "#32015"
+msgid "Playback error"
+msgstr "Wiedergabefehler"
+
+msgctxt "#32020"
+msgid "Error retrieving video duration: %s"
+msgstr "Fehler beim Ermitteln der Videodauer: %s"
+
+msgctxt "#32021"
+msgid "SmartSkipButton initialized – showing button"
+msgstr "SmartSkipButton initialisiert – zeige Button"
+
+msgctxt "#32022"
+msgid "Click detected on control ID:"
+msgstr "Klick erkannt auf Steuerung-ID:"
+
+msgctxt "#32023"
+msgid "User pressed back"
+msgstr "Benutzer hat Zurück gedrückt"
+
+msgctxt "#32024"
+msgid "Starting progress display – width:"
+msgstr "Starte Fortschrittsanzeige – Breite:"
+
+msgctxt "#32025"
+msgid "Error accessing progress bar: %s"
+msgstr "Fehler beim Zugriff auf Fortschrittsbalken: %s"
+
+msgctxt "#32027"
+msgid "Error setting progress bar width: %s"
+msgstr "Fehler beim Setzen der Breite: %s"
+
+msgctxt "#32028"
+msgid "Timeout reached – closing dialog"
+msgstr "Zeitüberschreitung – schließe Dialog"
+
+msgctxt "#32029"
+msgid "Progress"
+msgstr "Fortschritt"
+
+msgctxt "#32030"
+msgid "Width"
+msgstr "Breite"
+
+msgctxt "#32031"
+msgid "Video duration"
+msgstr "Videodauer"
+
+msgctxt "#32032"
+msgid "seconds"
+msgstr "Sekunden"
+
 msgctxt "#33001"
 msgid "Skip segment"
 msgstr "Intro überspringen"
+
+msgctxt "#33010"
+msgid "No EDL file found: %s"
+msgstr "Keine EDL-Datei gefunden: %s"
+
+msgctxt "#33011"
+msgid "Detected segment: %s (%.1f → %.1f)"
+msgstr "Segment erkannt: %s (%.1f → %.1f)"
+
+msgctxt "#33012"
+msgid "Invalid EDL line: %s"
+msgstr "Ungültige EDL-Zeile: %s"
+
+msgctxt "#33013"
+msgid "Error reading EDL file: %s"
+msgstr "Fehler beim Lesen der EDL-Datei: %s"
+
+msgctxt "#33014"
+msgid "Skip mode: Automatic"
+msgstr "Skip-Modus: Automatisch"
+
+msgctxt "#33015"
+msgid "Skip mode: Manual"
+msgstr "Skip-Modus: Manuell"
+

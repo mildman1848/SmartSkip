@@ -2,12 +2,34 @@
 import os
 import xbmcvfs
 import xbmc
+import xbmcaddon
+
+# Addon-Instanz und Logging-Tag
+addon = xbmcaddon.Addon()
+LOG_TAG = f"[{addon.getAddonInfo('name')} {addon.getAddonInfo('version')}]"
+
+
+def log(msg, level=xbmc.LOGDEBUG):
+    try:
+        debug_enabled = addon.getSettingBool("enable_debug_logging")
+    except Exception:
+        debug_enabled = addon.getSetting("enable_debug_logging") == "true"
+
+    if level != xbmc.LOGDEBUG or debug_enabled:
+        xbmc.log(f"{LOG_TAG} {msg}", level)
+
 
 def parse_edl_file(video_path):
+    """
+    Liest und parst eine EDL-Datei zum gegebenen Video.
+
+    Gibt eine Liste von Segmenten zurück: (start, end, seg_type)
+    """
     edl_path = os.path.splitext(video_path)[0] + ".edl"
     segments = []
 
     if not xbmcvfs.exists(edl_path):
+        log(addon.getLocalizedString(33010) % edl_path, xbmc.LOGDEBUG)  # "Keine EDL-Datei gefunden: %s"
         return segments
 
     try:
@@ -18,7 +40,7 @@ def parse_edl_file(video_path):
                 if not line:
                     continue
 
-                # Kommentar mit Segmenttyp extrahieren (z. B. #intro)
+                # Kommentar mit Segmenttyp extrahieren (z. B. #intro)
                 if "#" in line:
                     line, seg_type = line.split("#", 1)
                     seg_type = seg_type.strip().lower()
@@ -31,10 +53,12 @@ def parse_edl_file(video_path):
                         start = float(parts[0])
                         end = float(parts[1])
                         segments.append((start, end, seg_type))
+                        log(addon.getLocalizedString(33011) % (seg_type, start, end), xbmc.LOGDEBUG)  # "Segment erkannt: %s (%.1f → %.1f)"
                     except ValueError:
+                        log(addon.getLocalizedString(33012) % line, xbmc.LOGWARNING)  # "Ungültige EDL-Zeile: %s"
                         continue
     except Exception as e:
-        xbmc.log(f"[SmartSkip] Fehler beim Lesen der EDL-Datei: {str(e)}", xbmc.LOGERROR)
+        log(addon.getLocalizedString(33013) % str(e), xbmc.LOGERROR)  # "Fehler beim Lesen der EDL-Datei: %s"
 
     return segments
 
@@ -42,24 +66,21 @@ def parse_edl_file(video_path):
 def should_skip_automatically(skip_mode):
     """
     Entscheidet, ob ein Segment automatisch übersprungen werden soll,
-    basierend auf dem Skip-Modus.
-    Erwartet: 'Automatic' / 'Manual' (string) oder 0 / 1 (int).
+    basierend auf dem Skip-Modus ('Automatic' oder 'Manual').
     """
-    # Normalisieren
     if isinstance(skip_mode, int):
         mode_str = {0: "Automatic", 1: "Manual"}.get(skip_mode, "Unknown")
     elif isinstance(skip_mode, str):
-        # Strip + Capitalize für mehr Toleranz gegenüber Benutzereingaben
         mode_str = skip_mode.strip().capitalize()
     else:
         mode_str = "Unknown"
 
     if mode_str == "Automatic":
-        xbmc.log("[SmartSkip] Skip Mode: Automatic", xbmc.LOGINFO)
+        log(addon.getLocalizedString(33014), xbmc.LOGINFO)  # "Skip-Modus: Automatisch"
         return True
     elif mode_str == "Manual":
-        xbmc.log("[SmartSkip] Skip Mode: Manual", xbmc.LOGINFO)
+        log(addon.getLocalizedString(33015), xbmc.LOGINFO)  # "Skip-Modus: Manuell"
         return False
     else:
-        xbmc.log(f"[SmartSkip] Unbekannter Skip-Modus: {skip_mode}, verwende 'Manual'", xbmc.LOGWARNING)
+        log(addon.getLocalizedString(30033) % skip_mode, xbmc.LOGWARNING)  # "Warnung: Ungültiger Skip-Modus: %s"
         return False

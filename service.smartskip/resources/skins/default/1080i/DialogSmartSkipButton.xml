@@ -6,10 +6,11 @@
 
     <controls>
         <control type="group">
-            <left>78%</left>
-            <top>88%</top>
-            <width>20%</width>
-            <height>10%</height>
+            <!-- Dynamisch zentriert, unten rechts -->
+            <left>72%</left>
+            <top>85%</top>
+            <width>25%</width>
+            <height>12%</height>
             <visible>true</visible>
 
             <!-- Button-Hintergrund -->
@@ -23,16 +24,15 @@
                 <colordiffuse>FF222222</colordiffuse>
             </control>
 
-            <!-- Fortschrittsbalken (läuft nach links aus) -->
+            <!-- Fortschrittsbalken (läuft von rechts nach links) -->
             <control type="image" id="1002">
                 <description>Fortschrittsbalken</description>
                 <left>0</left>
                 <top>0</top>
-                <width>0</width> <!-- Start mit 0 -->
+                <width>0</width> <!-- Initial auf 0, wird per Code angepasst -->
                 <height>100%</height>
                 <texture colordiffuse="80AAAAAA">white.png</texture>
                 <aspectratio>stretch</aspectratio>
-                <animation effect="width" end="100%" time="3000" reversible="false" condition="true">Conditional</animation>
             </control>
 
             <!-- Segment-Label -->
@@ -41,13 +41,13 @@
                 <top>20%</top>
                 <width>100%</width>
                 <height>60%</height>
-                <label>$LOCALIZE[33001]</label> <!-- Z. B. „Intro überspringen“ -->
+                <label>$LOCALIZE[33001]</label> <!-- Z. B. "Intro überspringen" -->
                 <align>center</align>
                 <font>font13</font>
                 <textcolor>FFFFFFFF</textcolor>
             </control>
 
-            <!-- Unsichtbarer Klickbereich -->
+            <!-- Unsichtbarer Klickbereich (Button) -->
             <control type="button" id="100">
                 <left>0</left>
                 <top>0</top>
