@@ -1,8 +1,12 @@
+<p align="center">
+  <img src="icon.png" alt="SmartSkip Icon" width="120" />
+</p>
+
 # README.de.md
 
 # SmartSkip
 
-**SmartSkip** ist ein Kodi-Dienst-Addon für **Kodi Omega** und höher, das automatisch oder manuell Serien- und Filmsegmente wie **Intros**, **Recaps**, **Outros**, **Vorschauen** und **Credits** überspringt – basierend auf EDL-Dateien. Die Segmenterkennung erfolgt durch das vollständig integrierte Tool [`intro-skipper`](https://github.com/mildman1848/intro-skipper), ohne externe Python-Abhängigkeiten.
+**SmartSkip** ist ein Kodi-Dienst-Addon für **Kodi Omega** und höher, das automatisch oder manuell Serien- und Filmsegmente wie **Intros**, **Recaps**, **Outros**, **Vorschauen** und **Credits** überspringt – basierend auf EDL-Dateien. Die Segmenterkennung erfolgt durch das vollständig integrierte Tool [`intro-skipper`](https://github.com/intro-skipper/intro-skipper), ohne externe Python-Abhängigkeiten.
 
 ---
 

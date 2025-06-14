@@ -1,6 +1,10 @@
+<p align="center">
+  <img src="icon.png" alt="SmartSkip Icon" width="120" />
+</p>
+
 # SmartSkip
 
-**SmartSkip** is a Kodi service add-on for **Kodi Omega** and newer that automatically or manually skips TV and movie segments such as **intros**, **recaps**, **outros**, **previews**, and **credits** – based on EDL files. Segment detection is powered by the fully embedded [`intro-skipper`](https://github.com/mildman1848/intro-skipper) tool, with no external Python dependencies.
+**SmartSkip** is a Kodi service add-on for **Kodi Omega** and newer that automatically or manually skips TV and movie segments such as **intros**, **recaps**, **outros**, **previews**, and **credits** – based on EDL files. Segment detection is powered by the fully embedded [`intro-skipper`](https://github.com/intro-skipper/intro-skipper) tool, with no external Python dependencies.
 
 ---
 
