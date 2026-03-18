@@ -1,0 +1,76 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
+jobs:
+  detect:
+    name: Detect Languages
+    runs-on: ubuntu-latest
+    outputs:
+      languages: ${{ steps.detect.outputs.languages }}
+      enabled: ${{ steps.detect.outputs.enabled }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Detect CodeQL languages
+        id: detect
+        shell: bash
+        run: |
+          set -euo pipefail
+          langs=()
+          git ls-files | grep -Eq '\.py$' && langs+=("python") || true
+          git ls-files | grep -Eq '\.(js|jsx|ts|tsx)$' && langs+=("javascript") || true
+          git ls-files | grep -Eq '\.rb$' && langs+=("ruby") || true
+          git ls-files | grep -Eq '\.go$' && langs+=("go") || true
+          git ls-files | grep -Eq '\.(c|cc|cpp|cxx|h|hpp)$' && langs+=("c-cpp") || true
+          git ls-files | grep -Eq '\.(java|kt)$' && langs+=("java-kotlin") || true
+          if [ "${#langs[@]}" -eq 0 ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "languages=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          IFS=,
+          echo "enabled=true" >> "$GITHUB_OUTPUT"
+          echo "languages=${langs[*]}" >> "$GITHUB_OUTPUT"
+
+  analyze:
+    name: Analyze
+    needs: detect
+    if: needs.detect.outputs.enabled == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ needs.detect.outputs.languages }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v4
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v4
+
+  no-supported-code:
+    name: No Supported CodeQL Language
+    needs: detect
+    if: needs.detect.outputs.enabled != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip
+        run: echo "No supported CodeQL language detected. Adjust this workflow if needed."
