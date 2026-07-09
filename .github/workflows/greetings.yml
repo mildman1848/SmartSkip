@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   greeting:
+    if: ${{ !contains(github.actor, 'dependabot') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/first-interaction@v3
